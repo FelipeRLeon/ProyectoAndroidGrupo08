@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         Intent newIntent = new Intent( this, ProductoActivity.class);
 
         //paso de parametros
-        newIntent.putExtra("msg", "Hola");
+        newIntent.putExtra("msg", "HolaEter");
         newIntent.putExtra("year", 2021);
 
         newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
