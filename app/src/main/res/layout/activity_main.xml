@@ -10,7 +10,8 @@
             android:text="Producto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/button2" tools:layout_editor_absoluteY="202dp"
-            tools:layout_editor_absoluteX="152dp" android:onClick="goToActivityProducto"/>
+            tools:layout_editor_absoluteX="152dp" android:onClick="goToActivityProducto"
+            android:visibility="gone"/>
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

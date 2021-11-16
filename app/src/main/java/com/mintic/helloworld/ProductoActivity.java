@@ -13,6 +13,7 @@ public class ProductoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_producto);
+        //activar soporte action bar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);//Funcion para flecha regresar
         getParametros();
     }
