@@ -1,6 +1,9 @@
 package com.mintic.helloworld;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -50,5 +53,24 @@ public class MainActivity extends AppCompatActivity {
             startActivity(newIntent);
         }
         return super.onOptionsItemSelected(menuItem);
+    }
+
+    //Confirmacion de salida
+    public boolean onKeyDown(int keyCode, KeyEvent event){
+        if(keyCode == KeyEvent.KEYCODE_BACK){
+            new AlertDialog.Builder(this, R.style.Theme_AppCompat_DayNight_Dialog_Alert )
+                    .setIcon(android.R.drawable.ic_dialog_info)
+                    .setTitle("Informacion")
+                    .setMessage("¿Desea cerrar la aplicacion?")
+                    .setNegativeButton("No", null)
+                    .setPositiveButton("Si", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            MainActivity.this.finish();
+                        }
+                    }).show();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }
