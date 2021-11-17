@@ -1,4 +1,4 @@
-package com.mintic.helloworld;
+package com.bbt.ProyectoAndroidGrupo08;
 
 import android.view.MenuItem;
 import androidx.appcompat.app.AppCompatActivity;

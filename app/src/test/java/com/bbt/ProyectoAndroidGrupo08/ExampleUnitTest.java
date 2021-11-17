@@ -1,4 +1,4 @@
-package com.mintic.helloworld;
+package com.bbt.ProyectoAndroidGrupo08;
 
 import org.junit.Test;
 

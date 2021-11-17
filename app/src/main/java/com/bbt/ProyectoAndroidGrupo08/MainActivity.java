@@ -1,8 +1,9 @@
-package com.mintic.helloworld;
+package com.bbt.ProyectoAndroidGrupo08;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -72,5 +73,35 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
         return super.onKeyDown(keyCode, event);
+    }
+
+    protected void onStart(){
+        super.onStart();
+        //Toast.makeText(this, "Metodo onStart()", Toast.LENGTH_SHORT).show();
+    }
+
+    protected void onResume(){
+        super.onResume();
+        //Toast.makeText(this, "Metodo onResume()", Toast.LENGTH_SHORT).show();
+    }
+
+    protected void onPause(){
+        super.onPause();
+        //Toast.makeText(this, "Metodo onPause()", Toast.LENGTH_SHORT).show();
+    }
+
+    protected void onStop(){
+        super.onStop();
+        //Toast.makeText(this, "Metodo onStop()", Toast.LENGTH_SHORT).show();
+    }
+
+    protected void onRestart() {
+        super.onRestart();
+        //Toast.makeText(this, "Metodo onRestart()", Toast.LENGTH_SHORT).show();
+    }
+
+    protected void onDestroy(){
+        super.onDestroy();
+        Log.i("Informacion", "Metodo onDestroy()");
     }
 }
