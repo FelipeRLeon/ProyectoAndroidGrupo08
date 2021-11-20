@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.bbt.ProyectoAndroidGrupo08">
+
     <application
             android:allowBackup="true"
             android:icon="@mipmap/ic_new_launcher_round"
@@ -9,17 +10,21 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.HelloWorld">
         <activity
-                android:name="com.bbt.ProyectoAndroidGrupo08.CategoriaActivity"
-                android:label="@string/categoria"
+                android:name=".MainActivity"
                 android:exported="false">
         </activity>
         <activity
-                android:name="com.bbt.ProyectoAndroidGrupo08.ProductoActivity"
+                android:name=".CategoriaActivity"
+                android:exported="false"
+                android:label="@string/categoria">
+        </activity>
+        <activity
+                android:name=".ProductoActivity"
                 android:exported="false"
                 android:label="@string/producto">
         </activity>
         <activity
-                android:name="com.bbt.ProyectoAndroidGrupo08.MainActivity"
+                android:name=".SplashScreen"
                 android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -28,4 +33,5 @@
             </intent-filter>
         </activity>
     </application>
+
 </manifest>
