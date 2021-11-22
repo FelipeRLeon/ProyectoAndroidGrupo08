@@ -17,7 +17,7 @@
                 android:exported="false">
         </activity>
         <activity
-                android:name=".CategoriaActivity"
+                android:name=".ProductoActivity"
                 android:exported="false"
                 android:label="@string/categoria">
         </activity>
@@ -27,7 +27,7 @@
                 android:label="@string/producto">
         </activity>
         <activity
-                android:name=".ProductoActivity"
+                android:name=".CategoriaActivity"
                 android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
