@@ -20,10 +20,10 @@ public class ProductoActivity extends AppCompatActivity {
     }
 
     public void getParametros(){
-        Bundle extras = getIntent().getExtras();
+        /*Bundle extras = getIntent().getExtras();
         String msg = extras.getString("msg");
         int year = extras.getInt("year");
-        Toast.makeText(this, msg + " " + year, Toast.LENGTH_LONG).show();
+        Toast.makeText(this, msg + " " + year, Toast.LENGTH_LONG).show();*/
     }
 
     public void goToActivityMain(View view){

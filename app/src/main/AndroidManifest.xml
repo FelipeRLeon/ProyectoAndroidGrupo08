@@ -22,12 +22,12 @@
                 android:label="@string/categoria">
         </activity>
         <activity
-                android:name=".ProductoActivity"
+                android:name=".SplashScreen"
                 android:exported="false"
                 android:label="@string/producto">
         </activity>
         <activity
-                android:name=".SplashScreen"
+                android:name=".ProductoActivity"
                 android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
