@@ -4,15 +4,16 @@ import android.view.MenuItem;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class CategoriaActivity extends AppCompatActivity {
+public class MarcaActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_categoria);
+        setContentView(R.layout.activity_marca);
         //activar soporte action bar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
+
     //Inicio metodos flecha volver en el menu
     public void onBackPressed(){
         finish();

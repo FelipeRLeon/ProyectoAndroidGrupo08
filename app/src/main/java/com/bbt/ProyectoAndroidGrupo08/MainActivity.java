@@ -48,11 +48,14 @@ public class MainActivity extends AppCompatActivity {
             startActivity(newIntent);
         }else if(id == R.id.mnu_categoria){
             Intent newIntent = new Intent( this, CategoriaActivity.class);
-            newIntent.putExtra("msg", "HolaEter");
-            newIntent.putExtra("year", 2021);
+            newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(newIntent);
+        }else if(id == R.id.mnu_marca){
+            Intent newIntent = new Intent( this, MarcaActivity.class);
             newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(newIntent);
         }
+
         return super.onOptionsItemSelected(menuItem);
     }
 

@@ -35,7 +35,7 @@ public class ProductoActivity extends AppCompatActivity {
         // inicializacion de nueva activity
         startActivity(newIntent);
     }
-    //Funcion para flecha regresar
+    //Inicio metodos flecha volver en el menu
     public void onBackPressed(){
         finish();
     }
@@ -47,6 +47,7 @@ public class ProductoActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(menuItem);
     }
+    //fin metodos flecha volver en el menu
 
 
 }

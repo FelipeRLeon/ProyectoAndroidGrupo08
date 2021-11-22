@@ -5,4 +5,5 @@
           android:id="@+id/mnu_categoria"/>
     <item android:title="@string/producto" android:icon="@drawable/ic_producto"
           android:id="@+id/mnu_producto"/>
+    <item android:title="@string/marca" android:id="@+id/mnu_marca"/>
 </menu>

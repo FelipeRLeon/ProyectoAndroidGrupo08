@@ -9,25 +9,31 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/Theme.HelloWorld">
-        <activity android:name=".LoginActivity"
-                  android:exported="false">
-        </activity>
         <activity
                 android:name=".MainActivity"
                 android:exported="false">
         </activity>
         <activity
-                android:name=".ProductoActivity"
+                android:name=".LoginActivity"
+                android:exported="false">
+        </activity>
+        <activity
+                android:name=".MarcaActivity"
+                android:exported="false"
+                android:label="@string/marca">
+        </activity>
+        <activity
+                android:name=".CategoriaActivity"
                 android:exported="false"
                 android:label="@string/categoria">
         </activity>
         <activity
-                android:name=".SplashScreen"
+                android:name=".ProductoActivity"
                 android:exported="false"
                 android:label="@string/producto">
         </activity>
         <activity
-                android:name=".CategoriaActivity"
+                android:name=".SplashScreen"
                 android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
