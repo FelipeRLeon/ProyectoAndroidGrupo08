@@ -47,11 +47,25 @@
                         android:ems="10"
                         android:id="@+id/editTextTextPassword" android:hint="Contraseña"
                         android:drawableLeft="@drawable/ic_password"/>
+
                 <Button
-                        android:text="Iniciar sesion"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" android:id="@+id/iniciarSesion"
-                        android:backgroundTint="#4CAF50" android:textAllCaps="false" android:onClick="iniciarSesion"/>
+                    android:id="@+id/iniciarSesion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#3A883D"
+                    android:drawableLeft="@android:drawable/btn_star"
+                    android:onClick="iniciarSesion"
+                    android:text="@string/iniciar_sesion"
+                    android:textAllCaps="false" />
+
+                <ImageButton
+                    android:id="@+id/imageButton"
+                    android:layout_width="76dp"
+                    android:layout_height="83dp"
+                    android:background="#00FFFFFF"
+                    android:onClick="iniciarSesion"
+                    app:srcCompat="?android:attr/fingerprintAuthDrawable" />
+
                 <TextView
                         android:text="TextView"
                         android:layout_width="match_parent"

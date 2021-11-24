@@ -46,12 +46,12 @@ public class MainActivity extends AppCompatActivity {
             newIntent.putExtra("year", 2021);
             newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(newIntent);
-        }else if(id == R.id.mnu_categoria){
-            Intent newIntent = new Intent( this, CategoriaActivity.class);
+        }else if(id == R.id.mnu_horizontalscrollview){
+            Intent newIntent = new Intent( this, HorizontalScrollViewActivity.class);
             newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(newIntent);
-        }else if(id == R.id.mnu_marca){
-            Intent newIntent = new Intent( this, MarcaActivity.class);
+        }else if(id == R.id.mnu_scrollview){
+            Intent newIntent = new Intent( this, ScrollViewActivity.class);
             newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(newIntent);
         }

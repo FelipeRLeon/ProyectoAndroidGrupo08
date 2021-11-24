@@ -4,12 +4,12 @@ import android.view.MenuItem;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class CategoriaActivity extends AppCompatActivity {
+public class HorizontalScrollViewActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_categoria);
+        setContentView(R.layout.activity_horizontalscrollview);
         //activar soporte action bar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
