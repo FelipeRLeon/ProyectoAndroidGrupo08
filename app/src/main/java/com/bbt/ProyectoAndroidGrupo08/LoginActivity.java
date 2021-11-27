@@ -51,12 +51,15 @@ public class LoginActivity extends AppCompatActivity {
         t2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                {
-                    if (et1.getText().toString().equals("admin"))
+                    if (et1.getText().toString().equals(settings.getString("user", ""))){
                         Toast.makeText(LoginActivity.this,
                                 "Su contraseña es: " + settings.getString("pass", ""),
                                 Toast.LENGTH_SHORT).show();
-                }
+                }else{
+                        Toast.makeText(LoginActivity.this,
+                                "El usuario no existe", Toast.LENGTH_SHORT).show();
+
+                    }
             }
         });
 
@@ -69,6 +72,9 @@ public class LoginActivity extends AppCompatActivity {
                 editor.putString("user", et1.getText().toString());
                 editor.putString("pass", et2.getText().toString());
                 editor.commit();
+
+                et1.setText("");
+                et2.setText("");
             }
         });
     }
