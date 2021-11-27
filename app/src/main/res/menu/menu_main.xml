@@ -11,4 +11,7 @@
     <item
         android:id="@+id/mnu_scrollview"
         android:title="@string/scrollView" />
+    <item
+        android:id="@+id/mnu_encuesta"
+        android:title="Encuesta" />
 </menu>

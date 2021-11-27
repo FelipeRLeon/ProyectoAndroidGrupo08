@@ -13,25 +13,28 @@
             android:name=".SplashScreen"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
-            android:exported="false"></activity>
+            android:name=".EncuestaActivity"
+            android:exported="false" />
         <activity
-            android:name=".LoginActivity"
-            android:exported="false"></activity>
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ListViewActivity"
+            android:exported="false" />
         <activity
             android:name=".ScrollViewActivity"
             android:exported="false"
-            android:label="@string/scrollView"></activity>
+            android:label="@string/scrollView" />
         <activity
             android:name=".HorizontalScrollViewActivity"
             android:exported="false"
-            android:label="@string/horizontalscrollview"></activity>
+            android:label="@string/horizontalscrollview" />
         <activity
             android:name=".ProductoActivity"
             android:exported="false"
-            android:label="@string/producto"></activity>
+            android:label="@string/producto" />
         <activity
-            android:name=".EncuestaActivity"
+            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

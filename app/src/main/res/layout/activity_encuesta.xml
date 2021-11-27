@@ -14,10 +14,11 @@
             android:id="@+id/textView6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/comforterbrush_regular"
             android:text="Encuesta\nCiclo4"
             android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textSize="22sp"
+            android:textAppearance="@style/miestilo"
+            android:textSize="@dimen/texto_24sp"
             android:textStyle="bold" />
 
         <ImageView
@@ -64,6 +65,17 @@
             android:hint="Correo Electronico"
             android:inputType="textEmailAddress"
             android:minHeight="48dp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Direccion" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
             android:id="@+id/textView7"

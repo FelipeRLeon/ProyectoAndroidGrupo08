@@ -54,6 +54,10 @@ public class MainActivity extends AppCompatActivity {
             Intent newIntent = new Intent( this, ScrollViewActivity.class);
             newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(newIntent);
+        }else if(id == R.id.mnu_encuesta){
+            Intent newIntent = new Intent( this, EncuestaActivity.class);
+            newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(newIntent);
         }
 
         return super.onOptionsItemSelected(menuItem);

@@ -15,14 +15,17 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputEditText;
+
 public class EncuestaActivity extends AppCompatActivity {
-    CheckBox ch1, ch2, ch3, ch4, ch5, ch6;
-    EditText et1, et2, et3, et4;
-    TextView tv1;
-    SeekBar sk1;
-    Spinner sp1;
-    Switch sw1;
-    RadioButton rb1, rb2, rb3;
+    private CheckBox ch1, ch2, ch3, ch4, ch5, ch6;
+    private EditText et1, et2, et3, et4;
+    private TextView tv1;
+    private SeekBar sk1;
+    private Spinner sp1;
+    private Switch sw1;
+    private RadioButton rb1, rb2, rb3;
+    private TextInputEditText ti1;
 
     String textoDatos = "";
 
@@ -44,6 +47,8 @@ public class EncuestaActivity extends AppCompatActivity {
         et3 = (EditText) findViewById(R.id.editTextPhone);
         et4 = (EditText) findViewById(R.id.editTextTextEmailAddress);
 
+        ti1 = (TextInputEditText) findViewById(R.id.textInputEditText);
+                
         tv1 = (TextView) findViewById(R.id.textView13);
 
         sp1 = (Spinner) findViewById(R.id.spinner);
@@ -79,7 +84,8 @@ public class EncuestaActivity extends AppCompatActivity {
         String nom = "Nombre: " + et1.getText().toString();
         String fnac = "Fnacimiento: " + et2.getText().toString();
         String tel = "Telefono: " + et3.getText().toString();
-        String email = "Email" + et4.getText().toString();
+        String email = "Email: " + et4.getText().toString();
+        String direccion = "Direccion: " + ti1.getText().toString();
         String niv_ingles = "Nivel de ingles: " + sp1.getSelectedItem();
         String gust_prog = "¿Te gusta programar? ";
         if (sw1.isChecked()){
@@ -119,7 +125,7 @@ public class EncuestaActivity extends AppCompatActivity {
         new AlertDialog.Builder(this, R.style.Theme_AppCompat_DayNight_Dialog_Alert )
                 .setIcon(android.R.drawable.ic_dialog_info)
                 .setTitle("Datos")
-                .setMessage(nom + "\n" + fnac + "\n" + tel + "\n" + email + "\n" + niv_ingles + "\n" + gust_prog + "\n" + lenguajes + "\n" + texperiencia  + "\n" + satisfaccion)
+                .setMessage(nom + "\n" + fnac + "\n" + tel + "\n" + email + "\n" + niv_ingles + "\n" + gust_prog + "\n" + lenguajes + "\n" + texperiencia  + "\n" + satisfaccion  + "\n" + direccion)
                 .setPositiveButton("Aceptar", null).show();
 
     }
