@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,6 +19,7 @@ public class ProductoActivity extends AppCompatActivity {
     private Cursor filas;
     private ContentValues cv; //DB
     private EditText et1, et2;
+    private Spinner sp1, sp2, sp3;
 
 
 
@@ -35,6 +37,10 @@ public class ProductoActivity extends AppCompatActivity {
 
         et1 = (EditText) findViewById(R.id.input_nombre);
         et2 = (EditText) findViewById(R.id.input_descripcion);
+
+        sp1 = (Spinner) findViewById(R.id.spinner_categoria);
+        sp2= (Spinner) findViewById(R.id.spinner_marca);
+        sp3 = (Spinner) findViewById(R.id.spinner_lista_proveedores);
     }
 
     public void getParametros(){
@@ -47,23 +53,37 @@ public class ProductoActivity extends AppCompatActivity {
     public void agregarDatos(View view){ //Database
         String nom = et1.getText().toString();
         String des = et2.getText().toString();
+        String cat= sp1.getSelectedItem().toString();
+        String marca = sp2.getSelectedItem().toString();
+        String proveedor= sp3.getSelectedItem().toString();
 
-        db = admin.getWritableDatabase();
-        cv = new ContentValues();
-        cv.put("nombre", nom);
-        cv.put("descripcion",des);
+        if (!nom.equals("") && !des.equals("")
+                && !cat.equals("Seleccione...") && !marca.equals("Seleccione...")
+                && !proveedor.equals("Seleccione...")) {
+            db = admin.getWritableDatabase();
+            cv = new ContentValues();
+            cv.put("nombre", nom);
+            cv.put("descripcion", des);
+            cv.put("categoria", cat);
+            cv.put("marca", marca);
+            cv.put("proveedor", proveedor);
 
-        long reg = db.insert("producto", null, cv);
+            long reg = db.insert("producto", null, cv);
 
-        if (reg != -1){
-            Toast.makeText(this, "¡Registro almacenado exitosamente!", Toast.LENGTH_SHORT).show();
-            et1.setText("");
-            et2.setText("");
+            if (reg != -1) {
+                Toast.makeText(this, "¡Registro almacenado exitosamente!", Toast.LENGTH_SHORT).show();
+                et1.setText("");
+                et2.setText("");
+                sp1.setSelection(0);
+                sp2.setSelection(0);
+                sp3.setSelection(0);
+
+            } else {
+                Toast.makeText(this, "¡El registro no se pudo almacenar!", Toast.LENGTH_SHORT).show();
+            }
         }else{
-            Toast.makeText(this, "¡El registro no se pudo almacenar!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "¡Por favor llene todos los campos!", Toast.LENGTH_SHORT).show();
         }
-
-
     }
 
     public void ListarDatos(View view){
@@ -103,12 +123,15 @@ public class ProductoActivity extends AppCompatActivity {
     public void editarDatos(View view){
         String nom = et1.getText().toString();
         String des = et2.getText().toString();
+        String cat= sp1.getSelectedItem().toString();
+        String marca = sp2.getSelectedItem().toString();
+        String proveedor= sp3.getSelectedItem().toString();
 
         db = admin.getWritableDatabase();
         //cv = new ContentValues();
 
         //cv.put("descripcion",des);
-        db.execSQL("UPDATE producto SET descripcion='"+des+"' WHERE nombre='"+nom+"'");
+        db.execSQL("UPDATE producto SET descripcion='"+des+"', categoria='"+cat+"', marca='"+marca+"', proveedor='"+proveedor+"' WHERE nombre='"+nom+"'");
         /*int reg =db.update("producto", cv, "mombre='"+nom+"'", null);
 
         if(reg == 0){
@@ -120,6 +143,10 @@ public class ProductoActivity extends AppCompatActivity {
 
     public void buscarDatos(View view){
         String nom = et1.getText().toString();
+        String des = et2.getText().toString();
+        String cat= sp1.getSelectedItem().toString();
+        String marca = sp2.getSelectedItem().toString();
+        String proveedor= sp3.getSelectedItem().toString();
 
         if (!nom.equals("")) {
             db = admin.getReadableDatabase();

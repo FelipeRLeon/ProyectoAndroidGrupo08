@@ -11,7 +11,8 @@ public class MyDBSQLiteHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db){
-        db.execSQL("CREATE TABLE  producto(_id INTEGER PRIMARY KEY AUTOINCREMENT, nombre TEXT, descripcion TEXT)");
+        db.execSQL("CREATE TABLE  producto(_id INTEGER PRIMARY KEY AUTOINCREMENT, nombre TEXT, descripcion TEXT," +
+                "categoria TEXT, marca TEXT, proveedor TEXT)");
 
 
     }
@@ -19,7 +20,8 @@ public class MyDBSQLiteHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int verDBAnterior, int verDBNueva){
         db.execSQL("DROP TABLE IF EXISTS producto");
-        db.execSQL("CREATE TABLE  producto(_id INTEGER PRIMARY KEY AUTOINCREMENT, nombre TEXT, descripcion TEXT )");
+        db.execSQL("CREATE TABLE  producto(_id INTEGER PRIMARY KEY AUTOINCREMENT, nombre TEXT, descripcion TEXT," +
+                "categoria TEXT, marca TEXT, proveedor TEXT)");
 
 
     }

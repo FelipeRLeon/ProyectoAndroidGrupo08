@@ -55,13 +55,13 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"/>
 
         <Spinner
-                android:id="@+id/spinner_categoria"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_below="@+id/texto_categoria"
-                android:layout_toLeftOf="@+id/spinner_marca"
-                android:entries="@array/lista_categoria"/>
+            android:id="@+id/spinner_categoria"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/texto_categoria"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@+id/spinner_marca"
+            android:entries="@array/lista_categoria" />
 
         <TextView
                 android:id="@+id/texto_marca"
@@ -76,14 +76,14 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"/>
 
         <Spinner
-                android:id="@+id/spinner_marca"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/texto_marca"
-                android:layout_alignParentRight="true"
-                android:layout_alignStart="@+id/texto_marca"
-                android:layout_below="@+id/texto_marca"
-                android:entries="@array/lista_marca"/>
+            android:id="@+id/spinner_marca"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/texto_marca"
+            android:layout_alignStart="@+id/texto_marca"
+            android:layout_alignLeft="@+id/texto_marca"
+            android:layout_alignParentRight="true"
+            android:entries="@array/lista_marca" />
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" android:id="@+id/textView_proveedor" android:hint="Proveedor"

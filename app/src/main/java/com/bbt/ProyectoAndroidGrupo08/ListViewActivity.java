@@ -2,6 +2,7 @@ package com.bbt.ProyectoAndroidGrupo08;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -49,12 +50,11 @@ public class ListViewActivity extends AppCompatActivity {
         setTitle(nomTablaCapitalize);
 
         db = admin.getReadableDatabase();
-
         if(nomtabla.equals("producto")){
             filas = db.rawQuery("SELECT * FROM producto", null);
             while(filas.moveToNext()){
                 listado.add(filas.getInt(0) + "-" +
-                        filas.getString(1) + "-"+
+                        filas.getString(1) + "\n"+
                         filas.getString(2));
             }
             db.close();
@@ -67,7 +67,28 @@ public class ListViewActivity extends AppCompatActivity {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getApplicationContext() ,"Pos: "+ position + "-" + lv.getItemAtPosition(position), Toast.LENGTH_SHORT).show();
+                db = admin.getReadableDatabase();
+                filas = db.rawQuery("SELECT * FROM producto", null);
+                String info = "";
+                while(filas.moveToNext()) {
+                    if (lv.getItemAtPosition(position).equals(filas.getInt(0) + "-" +
+                            filas.getString(1)+ "\n" + filas.getString(2))) {
+                        info = "ID: " + filas.getInt(0) + "\n" +
+                                "nombre: " + filas.getString(1) + "\n" +
+                                "Descripcion: " + filas.getString(2) + "\n" +
+                                "Categoria: " + filas.getString(3) + "\n" +
+                                "Marca: " + filas.getString(4) + "\n" +
+                                "Proveedor: " + filas.getString(5);
+                    }
+                    db.close();
+                    //Toast.makeText(getApplicationContext(), info, Toast.LENGTH_SHORT).show();
+                    new AlertDialog.Builder(ListViewActivity.this)
+                            .setIcon(R.drawable.ic_shark2_foreground)
+                            .setTitle("Datos")
+                            .setMessage(info )
+                            .setPositiveButton("Aceptar", null).show();
+                }
+
             }
         });
 

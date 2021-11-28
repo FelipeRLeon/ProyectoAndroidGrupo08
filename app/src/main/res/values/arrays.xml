@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="lista_categoria">
+        <item>Seleccione...</item>
         <item>Semillas</item>
         <item>Sustrato</item>
         <item>Flores</item>
@@ -8,12 +9,14 @@
     </string-array>
 
     <string-array name="lista_marca">
+        <item>Seleccione...</item>
         <item>BBT</item>
         <item>TropicsGhost</item>
         <item>HighHome</item>
     </string-array>
 
     <string-array name="lista_proveedores">
+        <item>Seleccione...</item>
         <item>EterB</item>
         <item>Ghost1</item>
         <item>Ghost2</item>
