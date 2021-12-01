@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidProjects/MisionTic2022/app/src/main/res/layout/activity_apirest.xml" value="0.1" />
+        <entry key="..\:/AndroidProjects/MisionTic2022/app/src/main/res/layout/activity_camara.xml" value="0.25" />
         <entry key="..\:/AndroidProjects/MisionTic2022/app/src/main/res/layout/activity_encuesta.xml" value="0.33" />
         <entry key="..\:/AndroidProjects/MisionTic2022/app/src/main/res/layout/activity_list_view.xml" value="0.14719202898550723" />
         <entry key="..\:/AndroidProjects/MisionTic2022/app/src/main/res/layout/activity_login.xml" value="0.25" />
