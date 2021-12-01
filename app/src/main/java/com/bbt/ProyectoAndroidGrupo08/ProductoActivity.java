@@ -19,6 +19,8 @@ public class ProductoActivity extends AppCompatActivity {
     private SQLiteDatabase db; //DB
     private Cursor filas;
     private ContentValues cv; //DB
+
+
     private EditText et1, et2;
     private Spinner sp1, sp2, sp3;
 

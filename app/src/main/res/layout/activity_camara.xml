@@ -7,6 +7,14 @@
     android:orientation="vertical"
     tools:context=".CamaraActivity">
 
+    <EditText
+        android:id="@+id/txtDescripcion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Descripcion"
+        android:inputType="textCapWords" />
+
     <ImageButton
         android:id="@+id/btnCamara"
         android:layout_width="wrap_content"
@@ -16,6 +24,7 @@
         android:clickable="true"
         android:onClick="abrirCamara"
         android:src="@drawable/ic_baseline_camera_24" />
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
