@@ -10,6 +10,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Base64;
@@ -22,9 +23,12 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import java.io.BufferedInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 
-public class CamaraActivity extends AppCompatActivity {
+public class ImagenesActivity extends AppCompatActivity {
     private ImageButton btnCamara;
     private ImageView imgView;
     private EditText txtDescripcion;
@@ -39,7 +43,7 @@ public class CamaraActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_camara);
+        setContentView(R.layout.activity_imagenes);
 
         //DB
         admin = new MyDBSQLiteHelper(this, variables.nomDB, null, variables.version);
@@ -58,18 +62,43 @@ public class CamaraActivity extends AppCompatActivity {
                 });
     }
     public void abrirCamara(View view){
+        //acceder a la galeria
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if(intent.resolveActivity(getPackageManager()) != null){
             startActivityForResult(intent, 1);
         }
+
+    }
+
+    public void deGaleria(View view){
+        Toast.makeText(this, "¡xxx!", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(Intent.ACTION_PICK,
+                MediaStore.Images.Media.INTERNAL_CONTENT_URI);
+        startActivityForResult(intent, 2);
+
     }
     protected void onActivityResult(int requestCode,
                                     int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        //De la camara
         if (requestCode == 1 && resultCode == RESULT_OK) {
             Bundle extras = data.getExtras();
             Bitmap imgBitmap = (Bitmap) extras.get("data");
             imgView.setImageBitmap(imgBitmap);
+        }
+
+        //De la galeria
+        if (requestCode == 2 && resultCode == RESULT_OK) {
+            Uri selectedImage = data.getData();
+            InputStream inputStream;
+            try {
+                inputStream = getContentResolver().openInputStream(selectedImage);
+                BufferedInputStream bufferedInputStream = new BufferedInputStream(inputStream);
+                Bitmap bitmap = BitmapFactory.decodeStream(bufferedInputStream);
+                imgView.setImageBitmap(bitmap);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
         }
     }
 
