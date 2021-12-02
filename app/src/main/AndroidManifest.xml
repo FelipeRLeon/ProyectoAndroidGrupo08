@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HelloWorld">
         <activity
+            android:name=".CategoriaFireBaseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FacturaActivity"
+            android:exported="false" />
+        <activity
             android:name=".CamaraActivity"
             android:exported="false" />
         <activity
@@ -45,7 +51,7 @@
             android:exported="false"
             android:label="@string/producto" />
         <activity
-            android:name=".FacturaActivity"
+            android:name=".ProductoFireBaseActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

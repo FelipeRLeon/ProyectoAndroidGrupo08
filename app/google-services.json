@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "524829129574",
+    "project_id": "proyectoandroidgrupo08-812a3",
+    "storage_bucket": "proyectoandroidgrupo08-812a3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:524829129574:android:c99056cf686d2bf02566a7",
+        "android_client_info": {
+          "package_name": "com.mintic.helloworld"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "524829129574-ojk94pj6mn2v9r6itistbfn2a9qiuhf6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBj2L4mTdk_DIIJudjCR7xcSKsnwji-Rok"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "524829129574-ojk94pj6mn2v9r6itistbfn2a9qiuhf6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
